@@ -1,6 +1,4 @@
-FROM debian:jessie
-
-MAINTAINER cedric.olivier@free.fr
+FROM ioft/armhf-debian:jessie
 
 ENV JEEDOM_DB_HOST localhost
 ENV JEEDOM_DB_PASSWORD jeedom

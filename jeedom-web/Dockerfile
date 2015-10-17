@@ -1,6 +1,4 @@
-FROM debian:jessie
-
-MAINTAINER cedric.olivier@free.fr
+FROM ioft/armhf-debian:jessie
 
 RUN apt-get update && apt-get install -y \
 	build-essential \
