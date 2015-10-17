@@ -33,9 +33,7 @@ docker build -t arm-jeedom-web .
 And finally the main container, web front :
 
 ```
-docker run -d --name jeedom-web --volumes-from jeedom-data \
-	--link jeedom-mysql:mysql \
-	arm-jeedom-web
+docker run -d --name jeedom-web --volumes-from jeedom-data --link jeedom-mysql:mysql -p 80:80 -p 8070:8070 arm-jeedom-web
 ```
 
 For more detail on how to run, see [Cquad/jeedom](https://github.com/Cquad/jeedom) repo.
