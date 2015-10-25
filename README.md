@@ -10,8 +10,6 @@ Version used :
 First, start a mysql container and define MYSQL_USER, MYSQL_PASSWORD, MYSQL_ROOT_PASSWORD and MYSQL_DATABASE environment variables:
 
 ```
-docker run -d --name jeedom-mysql -p 3306:3306 -e MYSQL_USERNAME=jeedom -e MYSQL_PASSWORD=jeedom -e MYSQL_DBNAME=jeedom hareemca123/arm-mysql
-or
 docker run -d --name jeedom-mysql -p 3306:3306 -e MYSQL_USER=jeedom -e MYSQL_PASSWORD=jeedom -e MYSQL_ROOT_PASSWORD=jeedom -e MYSQL_DATABASE=jeedom armhfbuild/mysql:5.6
 ```
 
