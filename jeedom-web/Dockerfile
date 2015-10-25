@@ -1,5 +1,8 @@
 FROM armhfbuild/debian:jessie
 
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN echo 'deb http://ftp.debian.org/debian jessie-backports main contrib non-free' >> /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y \
 	build-essential \
 	cron \
