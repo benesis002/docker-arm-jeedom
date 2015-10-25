@@ -4,13 +4,13 @@
 It only consists in changing FROM instructions in Dockerfiles in order to get an ARM Debian:jessie version of the OS.
 
 Version used :
-- hareemca123/arm-mysql:latest
-- ioft/armhf-debian:jessie
+- armhfbuild/mysql:5.6
+- armhfbuild/debian:jessie
 
-First, start a mysql container and define MYSQL_USERNAME, MYSQL_PASSWORD and MYSQL_DBNAME environment variables:
+First, start a mysql container and define MYSQL_USER, MYSQL_PASSWORD, MYSQL_ROOT_PASSWORD and MYSQL_DATABASE environment variables:
 
 ```
-docker run -d --name jeedom-mysql -p 3306:3306 -e MYSQL_USERNAME=jeedom -e MYSQL_PASSWORD=jeedom -e MYSQL_DBNAME=jeedom hareemca123/arm-mysql
+docker run -d --name jeedom-mysql -p 3306:3306 -e MYSQL_USER=jeedom -e MYSQL_PASSWORD=jeedom -e MYSQL_ROOT_PASSWORD=jeedom -e MYSQL_DATABASE=jeedom armhfbuild/mysql:5.6
 ```
 
 Clone everything here and cd into the jeedom-data directory. Create the data container:
@@ -37,10 +37,10 @@ And finally the main container, web front:
 docker run -d -p 80:80 -p 8070:8070 -p 8083:8083 -p 9001:9001 -p 443:443 -p 17100:17100 --name jeedom-web --volumes-from jeedom-data --link jeedom-mysql:mysql arm-jeedom-web
 ```
 
-An other possibility is to run the all-in-one container:
+An other (bad) possibility is to run the all-in-one container:
 
 ```
-docker run -d -p 80:80 -p 22:22 -p 8070:8070 -p 9001:9001  -name jeedom-all-in-one arm-jeedom-all-in-one
+docker run -d -p 80:80 -p 22:22 -p 8070:8070 -p 9001:9001 -name jeedom-all-in-one arm-jeedom-all-in-one
 ````
 
 Or with --net=host to share all ports with host without using docker nat system.
