@@ -34,7 +34,7 @@ docker build -t arm-jeedom-web .
 And finally the main container, web front:
 
 ```
-docker run -d -p 80:80 -p 8070:8070 -p 8083:8083 -p 9001:9001 -p 443:443 -p 17100:17100 -p 1900:1900 --name jeedom-web --volumes-from jeedom-data --link jeedom-mysql:mysql arm-jessie-jeedom-web
+docker run -d -p 80:80 -p 8070:8070 -p 8083:8083 -p 9001:9001 -p 443:443 -p 17100:17100 --name jeedom-web --volumes-from jeedom-data --link jeedom-mysql:mysql arm-jessie-jeedom-web
 ```
 
 Finally, to use the sonos plugin with tts :
