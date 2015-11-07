@@ -6,6 +6,7 @@ It only consists in changing FROM instructions in Dockerfiles in order to get an
 Version used :
 - armhfbuild/mysql:5.6
 - armhfbuild/debian:jessie
+- [appellemoipolo/docker-arm-samba](https://github.com/appellemoipolo/docker-arm-samba)
 
 First, start a mysql container and define MYSQL_USER, MYSQL_PASSWORD, MYSQL_ROOT_PASSWORD and MYSQL_DATABASE environment variables:
 
