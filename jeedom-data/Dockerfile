@@ -34,11 +34,11 @@ RUN cp ./core/config/common.config.sample.php ./core/config/common.config.php
 
 VOLUME /usr/share/nginx/www/jeedom/
 
+RUN mkdir -p /tmp/sonos-tts && chmod 755 -R /tmp/sonos-tts && chown -R www-data:www-data /tmp/sonos-tts 
+VOLUME /tmp/sonos-tts/
+
 COPY docker-entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-
-
-
