@@ -23,7 +23,7 @@ docker build -t arm-jeedom-data .
 Launch the data container. This data container will install jeedom on mysql DB with the variables you defined previously in JEEDOM_DB_USER, JEEDOM_DB_PASSWORD and JEEDOM_DB_NAME:
 
 ```
-run --name jeedom-data -e JEEDOM_DB_USER=jeedom -e JEEDOM_DB_PASSWORD=jeedom -e JEEDOM_DB_NAME=jeedom --link jeedom-mysql:mysql arm-jeedom-data
+docker run --name jeedom-data -e JEEDOM_DB_USER=jeedom -e JEEDOM_DB_PASSWORD=jeedom -e JEEDOM_DB_NAME=jeedom --link jeedom-mysql:mysql arm-jeedom-data
 ```
 
 cd into your jeedom-web directory and create the web container:
