@@ -44,7 +44,7 @@ Finally, to use the sonos plugin with tts :
 docker run -d --name jeedom-samba-sonos-tts -p 139:139 -p 445:445 --volumes-from jeedom-web arm-samba -s "sonos-tts;/tmp/sonos-tts"
 ```
 
-#Depreciated#
+#Depreciated but actually used#
 
 An other (bad) possibility is to run the all-in-one container:
 
@@ -58,6 +58,11 @@ Or with --net=host to share all ports with host without using docker nat system.
 docker run -d (-p 80:80 -p 222:22 -p 8070:8070 -p 9001:9001) --net=host -name jeedom-all-in-one arm-jeedom-all-in-one
 ```
 
+Now running (with privileged mode):
+
+```
+docker run -d -p 80:80 -p 222:22 -p 8070:8070 -p 8083:8083 -p 9001:9001 --privileged --net=host -name jeedom-all-in-one arm-jeedom-all-in-one
+```
 
 For more detail on how to run, see [Cquad/jeedom](https://github.com/Cquad/jeedom) repo.
 
