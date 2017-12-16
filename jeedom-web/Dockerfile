@@ -1,4 +1,4 @@
-FROM armhfbuild/debian:jessie
+FROM resin/rpi-raspbian:latest
 
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN echo 'deb http://ftp.debian.org/debian jessie-backports main contrib non-free' >> /etc/apt/sources.list
